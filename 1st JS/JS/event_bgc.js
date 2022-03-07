@@ -19,3 +19,9 @@ function text(form){
 function mouseHover(){
     document.formulaire_test.prenom.style.backgroundColor = 'yellow';
 }
+
+function mouseLeave(){
+    document.forms[0].prenom
+    .style.backgroundColor = 'white';
+
+}

@@ -1,5 +1,5 @@
 function changeBgc(color){
-    document.body.style.backgroundColor = 'color';
+    document.body.style.backgroundColor = color;
 
 }
 
@@ -11,8 +11,8 @@ function f1(form){
     form.prenom.style.backgroundColor = 'white';
 }
 
-function text(form){
-    console.log(form.prenom.value);
+function texte(form){
+    const val = form.prenom.value;
     form.out.innerText = val;
 }
 
@@ -22,6 +22,7 @@ function mouseHover(){
 
 function mouseLeave(){
     document.forms[0].prenom
-    .style.backgroundColor = 'white';
+    .style
+    .backgroundColor = 'white';
 
 }

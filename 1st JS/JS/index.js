@@ -4,10 +4,12 @@ alert('Je suis une alerte')
 
 console.log('Je suis un console log'); */
 
-/* function carre(nombre) {
+/* 
+function carre(nombre) {
     console.log (nombre * nombre);
   }; 
-carre(19); */
+carre(19); 
+*/
 
 function carre(nombre = 1) {
     console.log(typeof nombre);
@@ -22,3 +24,9 @@ function testparam(b, a = 2){
 
 testparam(12);
 */
+
+//var v1 = "Coucou";
+
+let v2; 
+
+const v3 = 12;

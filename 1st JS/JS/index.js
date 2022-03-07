@@ -10,8 +10,15 @@ console.log('Je suis un console log'); */
 carre(19); */
 
 function carre(nombre = 1) {
+    console.log(typeof nombre);
     return nombre * nombre;
 }
+/*
+console.log(carre(12));
 
-console.log(carre());
+function testparam(b, a = 2){
+    console.log(a, b);
+}
 
+testparam(12);
+*/

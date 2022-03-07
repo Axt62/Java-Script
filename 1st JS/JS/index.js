@@ -9,8 +9,9 @@ console.log('Je suis un console log'); */
   }; 
 carre(19); */
 
-function carre(nombre) {
+function carre(nombre = 1) {
     return nombre * nombre;
 }
 
-console.log(carre(16));
+console.log(carre());
+

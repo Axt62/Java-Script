@@ -1,3 +1,4 @@
-function m(){
-    document.form1.Majuscules.value.strtoupper
+function toUpper(form1){
+    form1.email.style.textTransform = "uppercase"
+
 }

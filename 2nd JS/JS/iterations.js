@@ -31,6 +31,9 @@ const p1 = {
 
 //document.writeln(p1.prenom);
 
+// Key = Nom , Prenom , Age , Hobbies , Femme 
+// Value = Leconte , Antoine , 20 , { Sport , infomatique , voyage } , false
+
 for (const k in p1){
     document.writeln(`Key : ${k} - Value : ${p1[k]}<br>`);
 }

@@ -19,3 +19,18 @@ const tab1 = ["sam", "herve", "sab", "anto"];
 /*for (const prenom of tab1){
     document.writeln(prenom);
 }*/
+
+
+const p1 = {
+    nom: "Leconte",
+    prenom: "Antoine",
+    age: "20",
+    hobbies: ["sport", "informatique", "voyage"],
+    femme: false
+};
+
+//document.writeln(p1.prenom);
+
+for (const k in p1){
+    document.writeln(`Key : ${k} - Value : ${p1[k]}<br>`);
+}

@@ -9,7 +9,7 @@
 <body>
     <form action="">
         <div>
-            <input type="checkbox" name="cgv">
+            <input type="checkbox" name="cgv" onclick="checkbox(this);">
         </div>
         <div>
             <input type="checkbox" name="civ" value="m">
@@ -19,9 +19,9 @@
             <input type="text" name="name">
         </div>
         <div>
-            <select name="ville" id="">
+            <select name="ville" id="" onchange="select(this)">
                 <option value="fr">France</option>
-                <option value="be">Belgique</option>
+                <option value="be"selected>Belgique</option>
                 <option value="ch">Suisse</option>
             </select>
         </div>

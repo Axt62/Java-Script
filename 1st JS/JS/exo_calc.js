@@ -7,13 +7,14 @@ function calculer(form){
     const R2 = parseFloat (form.R2.value);
 
     let c = R1;
-    form.res.value = toStr("+", R1 += R2);
-    R1 = c;
-    form.res.value += toStr("*", R1 *= R2);
-    R1 = c;
-    form.res.value += toStr("/", R1 /= R2);
-    R1 = c;
-    form.res.value += toStr("%", R1 %= R2);
+    
+        form.res.value = toStr("+", R1 += R2);
+            R1 = c;
+        form.res.value += toStr("*", R1 *= R2);
+            R1 = c;
+        form.res.value += toStr("/", R1 /= R2);
+            R1 = c;
+        form.res.value += toStr("%", R1 %= R2);
 
 }
 

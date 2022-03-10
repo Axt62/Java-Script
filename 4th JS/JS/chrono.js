@@ -13,6 +13,8 @@ let countMinute = 0;
 
 let interval = 0;
 
+let isStart = false;
+let isStop = false;
 
 function oneToTwo(num){
     return num < 10 ? `0${num}`: num.toString();
@@ -29,24 +31,59 @@ function oneToTwoMilli(num){
 
 function remplissageHtml() {
     milli.innerHTML = oneToTwoMilli(countMilli);
-    second.innerHTML = oneToTwo(countSecond);
-    minute.innerHTML = oneToTwo(countMinute);
+
+    if (second.innerHTML !== oneToTwo(countSecond)){
+        second.innerHTML = oneToTwo(countSecond);
+    }
+
+    if (minute.innerHTML !== oneToTwo(countMinute)){
+        minute.innerHTML = oneToTwo(countMinute);
+    }
 }
 
 remplissageHtml();
 
 btnStart.addEventListener('click', () => {
+    if (isStart){
+      //  console.log(countMilli, countSecond, countMinute);
+      liste.innerHTML += `<p>${oneToTwo(countMinute )} : ${oneToTwo(countSecond)} . ${oneToTwoMilli(countMilli)}</p>`;
+
+    }else{
     interval = setInterval(() => {
+        if (!isStart){
+            isStart = true;
+        }
         countMilli += 60;
         logiqueCompteur();
        // console.log(countMilli, countSecond, countMinute);
        remplissageHtml();
     }, 60);
-});
+
+    btnStart.innerHTML = "Step";
+    btnStop.innerHTML = "Stop";
+    isStop = false;
+        }
+    }
+);
 
 btnStop.addEventListener('click', () => {
+    if(isStop){
+        milli.innerHTML = "000";
+        second.innerHTML = "00";
+        minute.innerHTML = "00";
+
+        liste.innerHTML = ""
+
+        btnStop.innerHTML = "Stop";
+        btnStart.innerHTML = "Start";
+    }else{
     clearInterval(interval);
     remplissageHtml();
+    isStart = false;
+    btnStart.innerHTML = "Restart";
+    isStop = true;
+    btnStop.innerHTML = "Reset";
+    }
 });
 
 function logiqueCompteur() {
@@ -65,7 +102,4 @@ function logiqueCompteur() {
         countSecond = 0;
         countMinute = 0;
     }
-
-
-
 }

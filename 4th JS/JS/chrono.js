@@ -4,6 +4,7 @@ const milli = document.querySelector('#chrono span:nth-child(3)');
 
 const btnStart = document.getElementById('btn-start');
 const btnStop = document.getElementById('btn-stop');
+const choiceMilli = document.getElementById('choiceMilli');
 
 const liste = document.querySelector('.liste');
 
@@ -15,6 +16,10 @@ let interval = 0;
 
 let isStart = false;
 let isStop = false;
+
+//@ts-ignore
+let intervalMilli = parseInt(choiceMilli.value)
+
 
 function oneToTwo(num){
     return num < 10 ? `0${num}`: num.toString();
@@ -72,6 +77,10 @@ btnStop.addEventListener('click', () => {
         second.innerHTML = "00";
         minute.innerHTML = "00";
 
+        countMilli = 0;
+        countSecond = 0;
+        countMinute = 0;
+
         liste.innerHTML = ""
 
         btnStop.innerHTML = "Stop";
@@ -85,6 +94,14 @@ btnStop.addEventListener('click', () => {
     btnStop.innerHTML = "Reset";
     }
 });
+
+choiceMilli.addEventListener('change', (e) => {
+    //@ts-ignore
+    intervalMilli = parseInt(e.target.value);
+});
+
+
+
 
 function logiqueCompteur() {
     if (countMilli >= 1000){

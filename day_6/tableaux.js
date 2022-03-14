@@ -38,8 +38,20 @@ console.log(t2, t3);
 t.push(12, 56, 98, -34, -27, 0);
 console.log(t);
 
-for (let i = 0; i <t.length; i++) {
+/*for (let i = 0; i <t.length; i++) {
     if (typeof t [i] !== 'number') {
         t.splice(i, 1)
     }
 }
+console.log(t) */
+
+// t = t.filter(value =>(typeof value === 'number'));
+// console.log(t)
+
+let t5 = t.map((value) => {
+    if (typeof value === 'number') {
+        return value ** 3
+    }
+})
+
+console.log(t5)

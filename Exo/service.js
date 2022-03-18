@@ -1,7 +1,7 @@
 import { UserModel } from "./model.js";
 
 async function getUsers() {
-    const response = await fetch("https://randomuser.me/api/?nat=fr&results=50%22");
+    const response = await fetch("https://randomuser.me/api/?nat=fr&results=50");
     const result = await response.json();
     console.log(result);
     return resultToUserModel(result['results']);

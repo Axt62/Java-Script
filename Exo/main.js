@@ -6,8 +6,7 @@ getUsers().then(users => {
         return/*html*/ `
 
         
-    <divid="users">
-            
+    <divid="users">        
         <div class='col-lg-4' style='cursor: pointer; padding-bottom: 15px;'>
             <div class="card" style="width: 18rem;">
                 <img src="${u.image}" class="card-img-top" alt="...">
@@ -21,15 +20,7 @@ getUsers().then(users => {
             </div>
           </div>
         </div>       
-
-            
-            
-            
-            
-            
-            
-            
-            </div>
+    </div>
             `
         ;
     });

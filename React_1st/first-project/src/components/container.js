@@ -1,6 +1,7 @@
 import React from 'react';
 import {MyName} from "./myName";
-import {MyCount} from "./myCount"
+import {MyCount} from "./myCount";
+import {Time} from "./time";
 
 
 export const Container = () => {
@@ -11,6 +12,7 @@ export const Container = () => {
         <main>
             <MyName first="Antoine" last="Leconte" />
             <MyCount />
+            <Time />
         </main>
     )
 }

@@ -1,9 +1,13 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 export const MyCount = () => {
 
 
     const [count, setCount] = useState(10);
+
+    useEffect(() => {
+        console.log("Mon compteur vaut " + count);
+    });
 
     const handleClick = () => {
         setCount(count+1);

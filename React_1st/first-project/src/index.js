@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import {Header} from "./components/header";
 import reportWebVitals from './reportWebVitals';
+import {Container} from "./components/container";
 
 ReactDOM.render(
   <React.StrictMode>
     <Header />
+    <Container />
   </React.StrictMode>,
   document.getElementById('root')
 );

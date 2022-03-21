@@ -11,28 +11,39 @@ const Users = () => {
                 // TODO: FAIRE UN FETCH VERS MON API RANDOMUSER
                 fetch ('https://randomuser.me/api/?results=5&nat=fr')
                     .then(response => response.json())
+                    .then(res => {
+                        const list = res['results'];
+                        const usersList = list.map(u => toObject(u));
+                        setUserList(list.map(u => toObject(u)));
+                    });
         },[]);
 
-
-    const user = {
-        gender: "",
-        titleName: 'M',
-        firstName: 'John',
-        lastName: 'Doe',
-        street: "17 chemin du moulin",
-        city: "Comines",
-        country: "France",
-        postCode: "59560",
-        email: "samuel.michaux@gmail.com",
-        phone: "0320123456",
-        cell: "0642958853",
-        pictureLarge: "https://randomuser.me/api/portraits/women/64.jpg",
-    };
+        function toObject(user) {
+            return {
+                gender: user["gender"],
+                titleName: user["name"]["title"],
+                firstName: user["name"]["first"],
+                lastName: user["name"]["last"],
+                street: user["location"]["street"]["number"] + " " + user["location"]["street"]["name"],
+                city: user["location"]["city"],
+                country: user["location"]["country"],
+                postCode: user["location"]["postcode"],
+                email: user["email"],
+                phone: user["phone"],
+                cell: user["cell"],
+                pictureLarge: user["picture"]["large"],
+            };
+        }
+ 
     return (
         <section className="users">
-            <OneUser user={user} />
+        {
+            userList && 
+            userList.map(u => <OneUser user={u}/>)
+        }
+ 
         </section>
-    )
+    );
 }
 
 export default Users;

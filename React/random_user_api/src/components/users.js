@@ -6,6 +6,7 @@ const Users = () => {
         
 
         const [userList, setUserList] = useState([]);
+        const [isPress, setIsPress] = useState(false);
 
         useEffect (() => {
                 // TODO: FAIRE UN FETCH VERS MON API RANDOMUSER
@@ -16,7 +17,7 @@ const Users = () => {
                         const usersList = list.map(u => toObject(u));
                         setUserList(list.map(u => toObject(u)));
                     });
-        },[]);
+        },[isPress]);
 
         function toObject(user) {
             return {
@@ -37,9 +38,12 @@ const Users = () => {
  
     return (
         <section className="users">
+            <button onClick={() => { setIsPress(true); } }>Rafraichir</button>
         {
-            userList && 
-            userList.map(u => <OneUser user={u}/>)
+            userList.length > 0 
+               ? userList.map((user, index) => <OneUser key={index} user={user}/>)
+               : <div className="loading">Chargement</div>
+            
         }
  
         </section>

@@ -26,6 +26,7 @@ const OneUser = props => {
             </div>
         </div>
     </article>
+    
     )
 
 }

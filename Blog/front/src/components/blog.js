@@ -6,7 +6,9 @@ const Blog = () => {
     const [articleList, setArticleList] = useState([]);
 
     useEffect(() => {
-        fetch('http://m2iformation.duckdns.org:5555).then(response => response.json()).then(l => {
+        fetch('http://m2iformation.duckdns.org:5555')
+        .then(response => response.json())
+        .then(l => {
             setArticleList(l);
         });
     }, []);

@@ -19,7 +19,7 @@ ReactDOM.render(
             <Route index element={<App />} />
         </Route>
         <Route path="/admin">
-          <Route path='articles' elements={<AdminArticle />} />
+          <Route path='articles' element={<AdminArticle />} />
         </Route>
     </Routes>
   </Router>,
